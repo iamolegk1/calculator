@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const CustomButton = () => {
+const Counter = () => {
   const [counter, setCounter] = useState(0);
 
   const usersList = [
@@ -42,4 +42,4 @@ const CustomButton = () => {
     </div>
   );
 };
-export default CustomButton;
+export default Counter;
