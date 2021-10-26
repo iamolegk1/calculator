@@ -75,9 +75,9 @@ const Calculator = () => {
           }
           onChange={onChangeInputValue}
         />
-        <Button title="Get result" onClick={onGetResult} />
       </div>
       <div>
+        <Button title="Get result" onClick={onGetResult} />
         <Button title="+" onClick={() => onChangeMathMethod("+")} />
         <Button title="-" onClick={() => onChangeMathMethod("-")} />
       </div>
