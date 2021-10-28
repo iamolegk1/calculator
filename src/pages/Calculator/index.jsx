@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import CalculatorInput from "./components/CalculatorInput";
 import Button from "../../components/Button";
+import "./Calculator.css";
 
 const Calculator = () => {
   const [calculatorData, setCalculatorData] = useState({
@@ -48,6 +49,12 @@ const Calculator = () => {
       if (calculatorData.mathMethod === "-") {
         return +calculatorData.firstValue - +calculatorData.secondValue;
       }
+      if (calculatorData.mathMethod === "×") {
+        return +calculatorData.firstValue * +calculatorData.secondValue;
+      }
+      if (calculatorData.mathMethod === "÷") {
+        return +calculatorData.firstValue / +calculatorData.secondValue;
+      }
     };
 
     const result = getResult();
@@ -59,8 +66,6 @@ const Calculator = () => {
       result,
     });
   };
-
-  console.log(calculatorData);
 
   return (
     <>
@@ -80,6 +85,8 @@ const Calculator = () => {
         <Button title="Get result" onClick={onGetResult} />
         <Button title="+" onClick={() => onChangeMathMethod("+")} />
         <Button title="-" onClick={() => onChangeMathMethod("-")} />
+        <Button title="×" onClick={() => onChangeMathMethod("×")} />
+        <Button title="÷" onClick={() => onChangeMathMethod("÷")} />
       </div>
     </>
   );
