@@ -2,7 +2,7 @@ import React from "react";
 
 const Button = ({ title, onClick }) => {
   return (
-    <button type="button" onClick={onClick}>
+    <button className="custom-btn" type="button" onClick={onClick}>
       {title}
     </button>
   );
