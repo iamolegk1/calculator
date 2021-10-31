@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import CalculatorInput from "./components/CalculatorInput";
 import Button from "../../components/Button";
-import "./Calculator.css";
+import "./index.css";
 
 const Calculator = () => {
   const [calculatorData, setCalculatorData] = useState({
@@ -67,6 +67,15 @@ const Calculator = () => {
     });
   };
 
+  const onClearAll = () => {
+    setCalculatorData({
+      firstValue: "",
+      secondValue: "",
+      mathMethod: "",
+      result: "",
+    });
+  };
+
   return (
     <>
       <div>
@@ -87,6 +96,7 @@ const Calculator = () => {
         <Button title="-" onClick={() => onChangeMathMethod("-")} />
         <Button title="×" onClick={() => onChangeMathMethod("×")} />
         <Button title="÷" onClick={() => onChangeMathMethod("÷")} />
+        <Button title="Clear" onClick={onClearAll} />
       </div>
     </>
   );
